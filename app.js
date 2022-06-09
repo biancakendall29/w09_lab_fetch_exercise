@@ -1,12 +1,10 @@
-console.log("HI!");
-
 const getCountryByName = (countryName) => {
     return new Promise((resolve, reject) => {
         fetch(`https://restcountries.com/v2/name/${countryName}`)
         .then(response => response.json())
-        // .then(data => console.log(data[0].name))
+        // .then(data => console.log(data[0]))
         .then((data) => {
-            paragraph.innerHTML = data[0].name;
+            paragraphName.innerHTML = `Country name is ${data[0].name} and population is ${data[0].population}`;
             resolve();
         })
     })
@@ -16,11 +14,12 @@ const getCountryByName = (countryName) => {
 
 const sect = document.getElementById("section");
 sect.innerHTML = "";
-const paragraph = document.createElement('p');
-getCountryByName("mozam");
+const paragraphName = document.createElement('p');
+const paragraphPop = document.createElement('p');
+getCountryByName("cuba");
 
 
-sect.append(paragraph);
+sect.append(paragraphName); sect.append(paragraphPop);
 
 
 
