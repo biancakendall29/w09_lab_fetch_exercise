@@ -44,7 +44,7 @@ const item2 = null;
 getCountryByName("cuba", item1);
 getCountryByName("mozam", item2);
 
-getAllCountries();
+// getAllCountries();
 
 
 
