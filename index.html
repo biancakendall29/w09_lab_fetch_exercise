@@ -7,14 +7,22 @@
     <script src="app.js" defer></script>
     <title>Fetch Exercise</title>
 </head>
-<body  onload="getAllCountries()">
+<body onload="getAllCountries()">
     <h1>Fetch Exercise</h1>
 
-    <form>
+    <form onsubmit="return false">
         Enter country name:<br>
-        <input id = "myInput" type="text" name="myInput" value="country">
-        <input type="submit" name="Submit" >
+        <input id = "myInput" type="text" name="myInput">
+        <input type="submit" name="Submit">
     </form>
+
+    <!-- <button id="button" type ="button" onclick="clicked()">Submit</button> -->
+
+    <!-- <script>
+        function clicked() {
+         alert(document.getElementById("myInput"));
+        }
+    </script> -->
 
 
     <section id="section"></section>

@@ -1,13 +1,12 @@
 const getCountryByName = (countryName) => {
-    console.log(countryName);
     item = addParagraph();
     return new Promise((resolve, reject) => {
         fetch(`https://restcountries.com/v2/name/${countryName}`)
         .then(response => response.json())
-        .then(data => console.log(data[0]))
+        // .then(data => console.log(data))
         .then((data) => {
-            item.innerHTML = `Country name is ${data[0].name} and population is ${data[0].population}`;
-            appendToSection(item);
+            item.innerHTML = `Country name is ${data[0].name} and population is ${data[0].population}`
+            appendToSection(item)
             resolve();
         })
     })
@@ -40,10 +39,14 @@ const sect = document.getElementById("section");
 sect.innerHTML = "";
 
 function filter() {
-    getCountryByName(document.getElementById("myInput").value);
+    sect.innerHTML = "";
+    let input = document.getElementById("myInput").value; 
+    console.log(input);
+    getCountryByName(input);
 }  
 
 document.querySelector("form").addEventListener('submit', filter);
+
 
 
 
